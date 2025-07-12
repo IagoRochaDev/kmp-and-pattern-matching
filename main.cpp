@@ -3,7 +3,7 @@
 
 int main()
 {
-    string pattern = "aba";
+    string pattern = "aa";
     string text = "aaababacaababc";
 
     Kmp kmp(pattern);

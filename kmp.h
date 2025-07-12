@@ -12,10 +12,6 @@ public:
     string p;
     int sigma;
 
-    /*
-    *Nescessario corrigir o reconhecimento das proximas ocorrencias
-    *   Sugestão: criar uma coluna adicional para indicar qual posição estamos no sufico apos a confirmação de uma ocorrencia
-    */
     Kmp(const string &pattern, int sigma = 256)
     {
         p = pattern;
@@ -24,7 +20,7 @@ public:
         int pi = p.size();
 
         // Inicializa matriz de transição
-        f.assign(sigma, vector<int>(pi, 0));
+        f.assign(sigma, vector<int>(pi+1, 0));
 
         for (int c = 0; c < sigma; c++)
         {
@@ -33,7 +29,7 @@ public:
         f[static_cast<unsigned char>(p[0])][0] = 1;
 
         int x = 0;
-        for (int i = 1; i < pi; i++)
+        for (int i = 1; i < pi+1; i++)
         {
             for (int c = 0; c < sigma; c++)
             {
