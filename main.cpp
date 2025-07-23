@@ -1,9 +1,10 @@
 #include <iostream>
-#include "Kmp.h"
+#include "kmp.h"
+#include "kmp_2.h"
 
 int main()
 {
-    string pattern = "aa";
+    string pattern = "aba";
     string text = "aaababacaababc";
 
     Kmp kmp(pattern);
@@ -15,7 +16,18 @@ int main()
         cout << "Encontrado na posição: " << pos << endl;
     }
 
+    pattern = "a*a";
+
+    Kmp_Wild kmpw(pattern);
+    kmpw.printF();
+    posicoes = kmpw.buscarOcorrencias(text);
+
+    for (int pos : posicoes)
+    {
+        cout << "Encontrado na posição: " << pos << endl;
+    }
+
     return 0;
 }
-// g++ main.cpp Kmp.cpp -o main
+// g++ main.cpp -o main
 //./main.exe
