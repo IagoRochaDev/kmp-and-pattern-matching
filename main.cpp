@@ -13,6 +13,8 @@
 #include "algoritmo_de_huffman/arvore_huffman.h"
 #include "kmp.h"
 #include "kmp_2.h"
+#include "kmp_3.h"
+
 
 int main()
 {
@@ -71,10 +73,12 @@ int main()
         }
 
         case 3:
+            {
             cout << "\n[Executando DataMining...]\n";
-            // TODO: Adicione aqui o código do processo 3
+            DataMining analisador("documento.txt");
+            analisador.executarAnalise();
             break;
-
+            }
         case 4:
 
         {
@@ -128,8 +132,7 @@ int main()
         }
 
     } while (opcao != 0);
-
+   
     return 0;
 }
-// g++ main.cpp -o main
-//./main.exe
+
