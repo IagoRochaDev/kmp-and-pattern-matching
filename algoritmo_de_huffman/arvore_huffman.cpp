@@ -21,9 +21,25 @@ void    inserirCaracter(list<No>& lista, unsigned int tabela[]) {
     }
 }
 
-void ordenarLista(list<No>& lista){
-    lista.sort(compararPorFrequencia);//Implementar na mão
+void ordenarLista(std::list<No>& lista) {
+    std::list<No> ordenada;
+
+    while (!lista.empty()) {
+        No atual = lista.front();
+        lista.pop_front();
+
+        auto it = ordenada.begin();
+        while (it != ordenada.end() && compararPorFrequencia(*it, atual)) {
+            ++it;
+        }
+
+        ordenada.insert(it, atual);
+    }
+
+    lista = std::move(ordenada);
 }
+
+
 
 void imprimirLista(list<No> lista){
     cout<<"\n\tLista Ordenada:\n";
