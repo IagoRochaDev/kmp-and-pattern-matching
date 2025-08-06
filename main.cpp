@@ -20,14 +20,17 @@ int main()
 
     do
     {
-        cout << "\n===== MENU PRINCIPAL =====\n";
-        cout << "1. KMP\n";
-        cout << "2. WildScore\n";
-        cout << "3. DataMining\n";
-        cout << "4. Compactar - Algoritmo de huffman\n";
-        cout << "5. Desompactar - Algoritmo de huffman\n";
-        cout << "0. Sair\n";
-        cout << "Escolha uma opcao: ";
+        cout << "\n==============================\n";
+        cout << "\t   MENU PRINCIPAL\n";
+        cout << "==============================\n";
+        cout << "1.\tKMP\n";
+        cout << "2.\tWildScore\n";
+        cout << "3.\tDataMining\n";
+        cout << "4.\tCompactar - Algoritmo de Huffman\n";
+        cout << "5.\tDescompactar - Algoritmo de Huffman\n";
+        cout << "0.\tSair\n";
+        cout << "------------------------------\n";
+        cout << "Escolha uma opção: ";
         cin >> opcao;
 
         switch (opcao)
