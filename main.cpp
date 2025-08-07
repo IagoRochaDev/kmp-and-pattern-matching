@@ -14,10 +14,13 @@
 #include "kmp.h"
 #include "kmp_2.h"
 #include "kmp_3.h"
+#include <windows.h>
 
 
 int main()
 {
+    SetConsoleOutputCP(CP_UTF8);
+    SetConsoleCP(CP_UTF8);
     int opcao;
 
     do
@@ -76,7 +79,7 @@ int main()
             {
             cout << "\n[Executando DataMining...]\n";
             DataMining analisador("documento.txt");
-            analisador.executarAnalise();
+            analisador.executarBusca();
             break;
             }
         case 4:
