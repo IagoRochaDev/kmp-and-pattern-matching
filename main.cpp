@@ -58,8 +58,8 @@ int main()
         case 2:
         {
             cout << "\n[Executando WildScore...]\n";
-            string pattern = "a*a";
-            string text = "aaababacaababc";
+            string pattern = "ab*cd*e";
+            string text = "xxabXcdYezzabZcdKeabMcdLe";
 
             Kmp_Wild kmpw(pattern);
             kmpw.printF();
@@ -76,7 +76,7 @@ int main()
             {
             cout << "\n[Executando DataMining...]\n";
             DataMining analisador("documento.txt");
-            analisador.executarAnalise();
+            analisador.executarBusca();
             break;
             }
         case 4:
